@@ -141,6 +141,9 @@ class SearchResultsUI{
   }
 }
 
+//peiwen124: this values array is for history search (incomplete)
+var values = [];
+
 class App{
   constructor(options){
     this.previewSize = {
@@ -220,6 +223,8 @@ class App{
 
     document.getElementById("find-again-button").addEventListener("click", this.submit.bind(this));
     document.getElementById("reset-button").addEventListener("click", this.reset.bind(this));
+    //Commit peiwen124
+    document.getElementById("save-button").addEventListener("click",this.save.bind(this));
   }
 
   showResultCountMessage({q, count}){
@@ -233,6 +238,11 @@ class App{
     });
   }
 
+ //peiwen124: this is a save function concept (incomplete)
+ save(){
+   values.push(document.getElementById("search-text-input").value);
+   document.getElementById("values").innerHTML = values.toString();
+ }
   /**
    * @param {string} q string to search
    * @param {Object} options pass to browser.find.find()

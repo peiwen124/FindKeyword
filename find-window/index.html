@@ -5,6 +5,8 @@
     <title></title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="index.css">
+	<!-- New style here -->
+
   </head>
   <body>
     <div>
@@ -17,13 +19,38 @@
           <label title="Toggle options"><input type=checkbox id="search-options-toggle-show"><span>⚙️</span></label>
           <output id="count-output" value=""></output>
         </div>
+
         <div class="block-container" id="search-options-container">
           <label><input type=checkbox id="case-sensitive-checkbox">Match Case</label>
           <label><input type=checkbox id="entire-word-checkbox">Entire Word</label>
           <button class="action-button" id="find-again-button" title="Find Again">▶️</button>
           <button class="action-button" id="reset-button" title="Reset">❎</button>
+          <button class="action-button" id="save-button" title="Save">Save</button>
         </div>
         <div id="message-container" class="message-state-none"></div>
+
+		<!-- New function here - history -->
+		<output id='values' value=""></output>
+
+		<!-- <script>
+		//NEW FUNCTION HERE - SAVE
+
+		values = [];
+
+		function addRecord() {
+		  var inp = document.getElementById('search-text-input');
+		  values.push(inp.value);
+		  inp.value = "";
+		}
+
+		function displayRecord() {
+		  document.getElementById("values").innerHTML = values.join(", ");
+		}
+
+		//END
+  </script>-->
+
+
       </div>
       <div id="search-results-container"></div>
     </div>
