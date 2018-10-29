@@ -142,7 +142,7 @@ class SearchResultsUI{
 }
 
 //peiwen124: this values array is for history search (incomplete)
-var values = [];
+var values = ["-","-","-"];
 
 class App{
   constructor(options){
@@ -240,9 +240,17 @@ class App{
 
  //peiwen124: this is a save function concept (incomplete)
  save(){
+   values.shift();
    values.push(document.getElementById("search-text-input").value);
-   document.getElementById("values").innerHTML = values.toString();
+   //document.getElementById("values").innerHTML = values.toString();
+   var x=0;
+   var size=3;
+   for (var n=0; n<size; n++){
+     document.getElementById("values"+n).innerHTML = values[n];
+     x++;
+   }
  }
+ //https://www.w3resource.com/javascript-exercises/javascript-array-exercise-13.php
   /**
    * @param {string} q string to search
    * @param {Object} options pass to browser.find.find()
