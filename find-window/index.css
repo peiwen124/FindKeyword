@@ -26,6 +26,12 @@ body {
   background-color : var(--bgColorSearchFormHover);
 }
 
+.button_fast{
+  margin-right: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
 #search-input-container {
   position : sticky;
   top : 0;

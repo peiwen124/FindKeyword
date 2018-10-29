@@ -142,7 +142,7 @@ class SearchResultsUI{
 }
 
 //peiwen124: this values array is for history search (incomplete)
-var values = ["-","-","-"];
+var values = ["-","-","-","-","-"];
 
 class App{
   constructor(options){
@@ -225,6 +225,28 @@ class App{
     document.getElementById("reset-button").addEventListener("click", this.reset.bind(this));
     //Commit peiwen124
     document.getElementById("save-button").addEventListener("click",this.save.bind(this));
+
+    //Commit peiwen124
+    document.getElementById("values0").addEventListener("click",(e) =>{
+      document.getElementById("search-text-input").value = values[0];
+      this.submit();
+    });
+    document.getElementById("values1").addEventListener("click",(e) =>{
+      document.getElementById("search-text-input").value = values[1];
+      this.submit();
+    });
+    document.getElementById("values2").addEventListener("click",(e) =>{
+      document.getElementById("search-text-input").value = values[2];
+      this.submit();
+    });
+    document.getElementById("values3").addEventListener("click",(e) =>{
+      document.getElementById("search-text-input").value = values[3];
+      this.submit();
+    });
+    document.getElementById("values4").addEventListener("click",(e) =>{
+      document.getElementById("search-text-input").value = values[4];
+      this.submit();
+    });
   }
 
   showResultCountMessage({q, count}){
@@ -244,12 +266,14 @@ class App{
    values.push(document.getElementById("search-text-input").value);
    //document.getElementById("values").innerHTML = values.toString();
    var x=0;
-   var size=3;
+   var size=5;
    for (var n=0; n<size; n++){
      document.getElementById("values"+n).innerHTML = values[n];
      x++;
    }
  }
+
+
  //https://www.w3resource.com/javascript-exercises/javascript-array-exercise-13.php
   /**
    * @param {string} q string to search
