@@ -223,10 +223,13 @@ class App{
 
     document.getElementById("find-again-button").addEventListener("click", this.submit.bind(this));
     document.getElementById("reset-button").addEventListener("click", this.reset.bind(this));
-    //Commit peiwen124
+
+    //-------------------------------------------------------------------------
+    //peiwen124: Fast Saved Function
+    //peiwen124: Save into button for Fast Saved
     document.getElementById("save-button").addEventListener("click",this.save.bind(this));
 
-    //Commit peiwen124
+    //peiwen124: Fast Saved Button
     document.getElementById("values0").addEventListener("click",(e) =>{
       document.getElementById("search-text-input").value = values[0];
       this.submit();
@@ -247,6 +250,55 @@ class App{
       document.getElementById("search-text-input").value = values[4];
       this.submit();
     });
+    //-------------------------------------------------------------------------
+    //peiwen124: Pre-Setting Keyword Function
+    document.getElementById("btn_search1").addEventListener("click",(e) =>{
+      document.getElementById("search-text-input").value = document.getElementById("tbx_save1").value;
+      this.submit();
+    });
+    document.getElementById("btn_search2").addEventListener("click",(e) =>{
+      document.getElementById("search-text-input").value = document.getElementById("tbx_save2").value;
+      this.submit();
+    });
+    document.getElementById("btn_search3").addEventListener("click",(e) =>{
+      document.getElementById("search-text-input").value = document.getElementById("tbx_save3").value;
+      this.submit();
+    });
+    document.getElementById("btn_search4").addEventListener("click",(e) =>{
+      document.getElementById("search-text-input").value = document.getElementById("tbx_save4").value;
+      this.submit();
+    });
+    document.getElementById("btn_search5").addEventListener("click",(e) =>{
+      document.getElementById("search-text-input").value = document.getElementById("tbx_save5").value;
+      this.submit();
+    });
+    //-------------------------------------------------------------------------
+    //peiwen124: toogle for Fast Saved Function
+    document.getElementById("show_fast_saved").addEventListener("click",(e)=>{
+      var box = document.getElementById("fast_saved");
+      var word = document.getElementById("show_fast_saved");
+      if (box.style.display !== "block") {
+        box.style.display = "block";
+        word.childNodes[0].nodeValue = "🔼";
+      } else {
+        box.style.display = "none";
+        word.childNodes[0].nodeValue = "🔽";
+      }
+    })
+    //-------------------------------------------------------------------------
+    //peiwen124: toogle for Pre-Setting Keyword Function
+    document.getElementById("show_pre_setting").addEventListener("click",(e)=>{
+      var box = document.getElementById("pre_setting");
+      var word = document.getElementById("show_pre_setting");
+      if (box.style.display !== "block") {
+        box.style.display = "block";
+        word.childNodes[0].nodeValue = "🔼";
+      } else {
+        box.style.display = "none";
+        word.childNodes[0].nodeValue = "🔽";
+      }
+    })
+    //-------------------------------------------------------------------------
   }
 
   showResultCountMessage({q, count}){
@@ -260,7 +312,8 @@ class App{
     });
   }
 
- //peiwen124: this is a save function concept (incomplete)
+ //-------------------------------------------------------------------------
+ //peiwen124: Save input into array, first in first out method
  save(){
    values.shift();
    values.push(document.getElementById("search-text-input").value);
@@ -272,9 +325,8 @@ class App{
      x++;
    }
  }
+//-------------------------------------------------------------------------
 
-
- //https://www.w3resource.com/javascript-exercises/javascript-array-exercise-13.php
   /**
    * @param {string} q string to search
    * @param {Object} options pass to browser.find.find()
