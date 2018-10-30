@@ -1,6 +1,6 @@
 {
   "manifest_version": 2,
-  "name": "Find in Page with Preview",
+  "name": "FindKeyword",
   "version": "0.1.5",
 
   "applications": {
@@ -38,13 +38,13 @@
 
   "browser_action": {
     "default_icon": "img/icon.svg",
-    "default_title": "Find in Page with Preview",
+    "default_title": "FindKeyword",
     "default_popup": "find-window/index.html?popup=1"
   },
 
   "sidebar_action": {
     "default_icon": "img/icon.svg",
-    "default_title": "Find in Page with Preview",
+    "default_title": "FindKeyword",
     "default_panel": "find-window/index.html"
   },
 
