@@ -4,9 +4,20 @@ body {
   margin : 0;
   padding : 0;
   overflow-x : hidden;
-  background-color : var(--bgColorSearchResult);
+  background-color : white;
 }
 
+p {
+  font-size: 14px;
+  margin:5px;
+}
+
+.all{
+  margin-left: 8px;
+  width: 100%;
+  margin-top: 8px;
+
+}
 .block-container {
   margin : 0;
   padding : 0;
@@ -24,6 +35,29 @@ body {
 
 .action-button:hover {
   background-color : var(--bgColorSearchFormHover);
+}
+
+.button_fast{
+  margin-right: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.tbx_temp{
+  margin-bottom: 5px;
+}
+
+#fast_saved {
+    width: 100%;
+    background-color: white;
+    margin-top: 20px;
+    display : none;
+}
+
+#pre_setting {
+    width: 100%;
+    background-color: white;
+    margin-top: 20px;
+    display : none;
 }
 
 #search-input-container {
@@ -53,8 +87,7 @@ body {
 
 #search-text-input {
   width : 100%;
-  color : var(--fgColorInput);
-  background-color : var(--bgColorInput);
+
 }
 
 #search-options-toggle-show{
